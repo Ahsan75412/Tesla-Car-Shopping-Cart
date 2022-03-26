@@ -1,42 +1,55 @@
-import React, { useEffect, useState } from 'react';
-import Cart from '../Cart/Cart';
-import Product from '../Product/Product';
-import './Shop.css';
+import React, { useEffect, useState } from "react";
+import "./Shop.css";
+import Product from "../Product/Product";
+import Cart from "../Cart/Cart";
 
 const Shop = () => {
-    const [products , setProducts] = useState([]);
-    const [cart , setCart] = useState([]);
+    const [products, setProducts] = useState([]);
+    const [cart, setCart] = useState([]);
 
-     useEffect(() => {
-        fetch('products.json')
-        .then(res => res.json())
-        .then(data => setProducts(data))
-    },[]);
+    useEffect(() => {
+        fetch("products.json")
+            .then((res) => res.json())
+            .then((data) => setProducts(data));
+    }, []);
 
-    const handleAddToCart =(product) => {
-        const newCart = [...cart , product];
+    const handleAddToCart = (product) => {
+        const newCart = [...cart, product];
         setCart(newCart);
-    }
+    };
+
+    const handleRemove = () => {
+        setCart([]);
+    };
+
+    const chooseRandom = () => {
+        const newCart = [cart[Math.floor(Math.random() * cart.length)]];
+        setCart(newCart);
+    };
+
     return (
-        <div className='shop-container'>
+        <div className="shop-container">
             <div className="products-container">
-                {
-                    products.map(product => <Product 
-                        key={product.id} 
-                        product = {product}
+                {products.map((product) => (
+                    <Product
+                        key={product.id}
+                        product={product}
                         handleAddToCart={handleAddToCart}
-                        
-                        > </Product>)
-                }
-
+                    ></Product>
+                ))}
             </div>
-
             <div className="cart-container">
-               <Cart cart={Cart}></Cart>
+                <Cart
+                    cart={cart}
+                    handler={handleRemove}
+                    random={chooseRandom}
+                ></Cart>
             </div>
-            
         </div>
     );
 };
 
 export default Shop;
+
+
+
