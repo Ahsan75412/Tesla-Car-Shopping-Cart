@@ -1,6 +1,7 @@
 .shop-container{
     display: grid;
     grid-template-columns: 4fr 1fr;
+    overflow: hidden;
 }
 
 .products-container{
@@ -24,10 +25,13 @@
 
 @media screen and (max-width:800px) {
   .shop-container{
+        grid-template-columns: repeat(2, 1fr );
         margin-top: 10px;
         display: flex;
         flex-direction: column;
         order: 1;
+        text-align: center;
+    
     }
 
     .products-container{

@@ -2,10 +2,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid rgb(65, 55, 55);
+    border: 1px solid rgb(117, 99, 99);
     border-radius: 8px;
     padding: 4px;
     margin: 4px;
+    width: 170px;
 }
 .added-items img {
     width: 40px;

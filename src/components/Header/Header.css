@@ -29,12 +29,20 @@
 
 @media screen and (max-width: 710px)  {
     .header{
+        flex-direction: column;
+        padding: 15px;
+    }
+    .design{
         display: flex;
         flex-direction: column;
-
-
     }
+
+    .header a{
+        padding: 15px;
+    }
+
 
     
     
 }
+

@@ -12,7 +12,7 @@ const Cart = ({ cart, handler, random }) => {
 
     return (
         <div className="cart">
-            <h3>Order Summery</h3>
+            <h5>Order Summery</h5>
             <p>Selected Items: {cart.length}</p>
 
             <div className="display-added">
@@ -20,9 +20,9 @@ const Cart = ({ cart, handler, random }) => {
                     <AddedItems key={i} product={product}></AddedItems>
                 ))}
             </div>
-            <button onClick={handler}>Remove All Item</button>
+            <button className="btn-design" onClick={handler}>Remove All Item</button>
 
-            <button onClick={random}>Choose for me</button>
+            <button className="btn-design" onClick={random}>Choose for me</button>
 
             <p>Total Price: ${total}</p>
             <p>Tax: ${tax}</p>

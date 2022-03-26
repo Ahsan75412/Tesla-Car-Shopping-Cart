@@ -3,3 +3,15 @@
     top: 0;
     padding: 30px 23px;
 }
+
+.btn-design{
+    margin: 5px;
+    border-radius: 8px;
+
+}
+
+.btn-design:hover{
+    color: blue;
+    transition: all 0.4s;
+    background-color: darkgrey;
+}
